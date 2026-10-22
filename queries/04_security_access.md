@@ -87,8 +87,9 @@ history:/[stationName]/AuditHistory|bql:select timestamp, userName, value where 
 ```
 
 ### Audit Events in a Date Range
+Replace `[startDate]` and `[endDate]` with dates in `YYYY-MM-DD` form.
 ```
-history:/[stationName]/AuditHistory|bql:select timestamp, userName, operation, target where timestamp >= AbsTime '2024-01-01T00:00:00.000-0' and timestamp <= AbsTime '2024-12-31T23:59:59.000-0'
+history:/[stationName]/AuditHistory|bql:select timestamp, userName, operation, target where timestamp >= AbsTime '[startDate]T00:00:00.000-0' and timestamp <= AbsTime '[endDate]T23:59:59.000-0'
 ```
 
 ---
