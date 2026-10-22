@@ -11,7 +11,7 @@
 1. Open Workbench
 2. Press **`CTRL+L`** to open the ORD query bar
 3. Paste any query from this repo
-4. Replace `[stationName]` with your actual station name where indicated
+4. Replace `[stationName]` with your actual station name, and any `[cutoffDate]`, `[startDate]` or `[endDate]` with a date in `YYYY-MM-DD` form, where indicated
 5. Press Enter — results open in a Collection Table
 
 For remote stations prefix every query with:
