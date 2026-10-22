@@ -100,9 +100,10 @@ station:|slot:/Drivers|bql:select name, displayName, status from driver:DeviceNe
 station:|slot:/Drivers|bql:select slotPath, displayName, enabled, status from driver:Device where enabled = false
 ```
 
-### Last OK Time (comms last seen alive) — requires LastOkTime extension
+### Last OK Time (comms last seen alive)
+`lastOkTime` lives on each device's health component (`driver:PingHealth`), not on the device itself.
 ```
-station:|slot:/Drivers|bql:select slotPath, displayName, lastOkTime, status from driver:Device
+station:|slot:/Drivers|bql:select parent.slotPath as 'Device', parent.displayName as 'Name', down as 'Down', lastOkTime as 'Last OK', lastFailTime as 'Last Fail' from driver:PingHealth order by down DESC
 ```
 
 ---

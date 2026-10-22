@@ -53,7 +53,7 @@ station:|slot:/Drivers|bql:select count(name) as 'Healthy' from driver:Device wh
 
 ### All Points with ANY Status Flag Set
 ```
-station:|slot:/|bql:select slotPath, displayName, out, status from control:ControlPoint where status != {ok}
+station:|slot:/|bql:select slotPath, displayName, out, status from control:ControlPoint where status.fault = 'true' or status.down = 'true' or status.stale = 'true' or status.disabled = 'true' or status.alarm = 'true' or status.overridden = 'true'
 ```
 
 ### Stale Points (no update received)
@@ -99,15 +99,16 @@ station:|slot:/Drivers|bql:select name, displayName, status from driver:DeviceNe
 
 ## 4. Last Communication Time
 
-### Devices with LastOkTime Extension
+### Device last OK and last fail times
+`lastOkTime` lives on each device's health component (`driver:PingHealth`), not on the device itself.
 ```
-station:|slot:/Drivers|bql:select slotPath, displayName, lastOkTime, status from driver:Device
+station:|slot:/Drivers|bql:select parent.slotPath as 'Device', parent.displayName as 'Name', down as 'Down', lastOkTime as 'Last OK', lastFailTime as 'Last Fail' from driver:PingHealth order by down DESC
 ```
 
 ### Devices NOT heard from (lastOkTime older than a cutoff)
 Replace `[cutoffDate]` with a date in `YYYY-MM-DD` form, for example 30 days before today. Devices last heard from before that date are listed.
 ```
-station:|slot:/Drivers|bql:select slotPath, displayName, lastOkTime from driver:Device where lastOkTime < AbsTime '[cutoffDate]T00:00:00.000-0'
+station:|slot:/Drivers|bql:select parent.slotPath as 'Device', parent.displayName as 'Name', down as 'Down', lastOkTime as 'Last OK', lastFailTime as 'Last Fail' from driver:PingHealth where lastOkTime < AbsTime '[cutoffDate]T00:00:00.000-0'
 ```
 
 ---
