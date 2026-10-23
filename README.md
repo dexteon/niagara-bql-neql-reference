@@ -87,3 +87,8 @@ station:|slot:|neql:n:point|bql:select displayName, slotPath, ord
 - [thomasjupe — NiagaraN4BQLQueries](https://github.com/thomasjupe/NiagaraN4BQLQueries)
 - [iC Knowledge Base — Multi-Protocol BQL](https://icdocs.ismacontrolli.com/kb/article/niagara-network-protocols-bql-queries-for-device-i)
 - [Tridium Summit — NEQL Tags & Relations PDF](https://pages1.tridium.com/rs/808-SGM-271/images/EntitiesTagsNEQL.pdf)
+
+
+<!-- ca-tracked-link -->
+---
+Built by [CyberAutomations](https://cyberautomations.com/?utm_source=github&utm_medium=readme&utm_campaign=niagara-bql-neql-reference). Need something like this built for your business? Start there.
