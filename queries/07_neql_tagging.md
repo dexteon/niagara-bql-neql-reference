@@ -1,4 +1,4 @@
-# NEQL — Tag & Relation Queries
+# NEQL: Tag & Relation Queries
 
 > **Goal:** Query assets using Niagara's tag/relation model (N4.4+)
 > **Interface:** Workbench `CTRL+L`
@@ -12,7 +12,7 @@
 station:|slot:[scope]|neql:[dictionary]:[tagName]|bql:select [columns]
 ```
 
-NEQL acts as a **pre-filter** — it selects entities by tag before BQL runs.
+NEQL acts as a **pre-filter**, it selects entities by tag before BQL runs.
 
 ---
 
@@ -38,7 +38,7 @@ station:|slot:|neql:n:history|bql:select displayName, slotPath
 station:|slot:|neql:n:ordInSession|bql:select displayName, ordInSession, ord
 ```
 
-### Entities with Vendor Tag — Get Tag Value (Vykon Pro)
+### Entities with Vendor Tag: Get Tag Value (Vykon Pro)
 ```
 station:|slot:/Drivers|bql:select name, vykonPro:Lib.tagValue('n:vendor') as 'Vendor' from baja:Component where vykonPro:Lib.hasTag('n:vendor') = 'true'
 ```
@@ -113,12 +113,12 @@ station:|slot:|neql:my:building|bql:select displayName, slotPath
 
 ## 5. NEQL + BQL Combined Pipelines
 
-### Tagged Points — Show Real-Time Value
+### Tagged Points: Show Real-Time Value
 ```
 station:|slot:/Drivers|neql:n:point|bql:select displayName, out, status
 ```
 
-### Tagged Sites — Count Points Per Site
+### Tagged Sites: Count Points Per Site
 ```
 station:|slot:|neql:hs:site|bql:select displayName, count(name) as 'Points'
 ```
@@ -130,7 +130,7 @@ station:|slot:|neql:hs:equip|bql:select count(out)|cell:0,0
 
 ---
 
-## 6. Relation Traversal (Java API — not CTRL+L)
+## 6. Relation Traversal (Java API, not CTRL+L)
 
 Relations must be traversed in Java code, not via BQL/NEQL in Workbench.
 

@@ -25,7 +25,7 @@
 http://[ip]/ord?station:|slot:/Drivers|bql:select%20*%20from%20driver:Device
 ```
 
-### All Devices — Key Fields
+### All Devices: Key Fields
 ```
 http://[ip]/ord?station:|slot:/Drivers|bql:select%20slotPath,displayName,status%20from%20driver:Device
 ```

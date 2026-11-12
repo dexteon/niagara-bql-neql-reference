@@ -69,7 +69,7 @@ control:ControlPoint                     ← ALL points
 | **BACnet** | `bacnet:BacnetDevice` | `bacnet:BacnetNetwork` |
 | **Modbus TCP** | `modbusTcp:ModbusTcpDevice` | `modbusTcp:ModbusTcpNetwork` |
 | **Modbus RTU** | `modbusAsync:ModbusAsyncDevice` | `modbusAsync:ModbusAsyncNetwork` |
-| **Modbus (both)** | `modbusCore:ModbusClientDevice` | — |
+| **Modbus (both)** | `modbusCore:ModbusClientDevice` | none |
 | **LonWorks** | `lon:LonDevice` | `lon:LonNetwork` |
 | **SNMP** | `snmp:SnmpDevice` | `snmp:SnmpNetwork` |
 | **KNX** | `knx:KnxDevice` | `knx:KnxNetwork` |

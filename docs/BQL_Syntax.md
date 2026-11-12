@@ -1,4 +1,4 @@
-# BQL — Full Syntax Reference
+# BQL: Full Syntax Reference
 
 > Baja Query Language (BQL) is the SQL-like query language built into Tridium Niagara 4.
 > All queries run in Workbench via `CTRL+L`.
@@ -61,7 +61,7 @@ sum                 -- sum (history rollup context)
 
 ---
 
-## FROM Clause — Type Filtering
+## FROM Clause: Type Filtering
 
 Only components of the specified type (or subtype) are returned.
 
@@ -82,7 +82,7 @@ from user:User               -- user accounts
 from user:UserRole           -- user roles
 ```
 
-Protocol-specific types — see `queries/06_protocol_specific.md`.
+Protocol-specific types: see `queries/06_protocol_specific.md`.
 
 ---
 
@@ -242,7 +242,7 @@ station:|slot:/Drivers|bql:select * from driver:Device|bql:select name, status
 | `-` | `$2d` |
 | `#` | `$23` |
 
-Example — slot `n:history`:
+Example: slot `n:history`:
 ```
 where slotExists('n$243ahistory')
 ```

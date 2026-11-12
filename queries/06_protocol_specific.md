@@ -17,7 +17,7 @@ station:|slot:/Drivers|bql:select * from bacnet:BacnetDevice
 station:|slot:/Drivers|bql:select name, displayName, address, deviceId, status from bacnet:BacnetDevice
 ```
 
-### BACnet Devices — Name, Address, Vendor Info
+### BACnet Devices: Name, Address, Vendor Info
 ```
 station:|slot:/Drivers|bql:select slotPath, displayName, address, deviceId, vendorName, modelName, applicationSoftwareVersion, status from bacnet:BacnetDevice
 ```
@@ -46,17 +46,17 @@ station:|slot:/Drivers|bql:select * from bacnet:BacnetNetwork
 
 ## Modbus
 
-### All Modbus Devices — TCP
+### All Modbus Devices: TCP
 ```
 station:|slot:/Drivers|bql:select * from modbusTcp:ModbusTcpDevice
 ```
 
-### All Modbus Devices — Async (RTU/Serial)
+### All Modbus Devices: Async (RTU/Serial)
 ```
 station:|slot:/Drivers|bql:select * from modbusAsync:ModbusAsyncDevice
 ```
 
-### All Modbus Devices — Both TCP + Async (common parent)
+### All Modbus Devices: Both TCP + Async (common parent)
 ```
 station:|slot:/Drivers|bql:select * from modbusCore:ModbusClientDevice
 ```
@@ -66,7 +66,7 @@ station:|slot:/Drivers|bql:select * from modbusCore:ModbusClientDevice
 station:|slot:/Drivers|bql:select name, displayName, address, unitId, status from modbusCore:ModbusClientDevice
 ```
 
-### Modbus TCP Devices — IP + Port
+### Modbus TCP Devices: IP + Port
 ```
 station:|slot:/Drivers|bql:select name, displayName, ipAddress, port, unitId, status from modbusTcp:ModbusTcpDevice
 ```
@@ -191,7 +191,7 @@ station:|slot:/Drivers|bql:select slotPath as 'Path', displayName as 'Name', par
 ```
 
 ### Devices Across Multiple Specific Protocols
-BQL does not support UNION — run separately per type or use the universal `driver:Device` query above.
+BQL does not support UNION, run separately per type or use the universal `driver:Device` query above.
 
 ### NEQL-Based Cross-Protocol (requires tagging)
 ```
@@ -201,7 +201,7 @@ station:|slot:|neql:my:deviceForQuery|bql:select displayName, slotPath, status
 
 ---
 
-## Type Reference — Common Protocol Types
+## Type Reference: Common Protocol Types
 
 | Protocol | BQL FROM Type | Notes |
 |----------|--------------|-------|
