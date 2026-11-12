@@ -2,7 +2,7 @@
 
 > **Goal:** Enumerate users, roles, permissions, audit trail, login/logout events
 > **Interface:** Workbench `CTRL+L`
-> **Note:** No alarm data — security posture and access control only
+> **Note:** No alarm data, security posture and access control only
 
 ---
 
@@ -49,14 +49,14 @@ station:|slot:/Services/UserService|bql:select name, displayName, permissions fr
 
 ---
 
-## 3. Audit Log — Access & Change Events
+## 3. Audit Log: Access & Change Events
 
 ### Full Audit Log (All Events)
 ```
 history:/[stationName]/AuditHistory|bql:select *
 ```
 
-### Login & Logout Events — Last 7 Days
+### Login & Logout Events: Last 7 Days
 ```
 station:|history:/[stationName]/SecurityHistory?period=last7Days|bql:select timestamp.toDateString as 'Date', timestamp.toTimeString as 'Time', operation as 'Operation', userName as 'User' where operation like 'Login' or operation like 'Logout'
 ```

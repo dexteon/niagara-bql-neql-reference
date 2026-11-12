@@ -16,7 +16,7 @@
 | `/` | `$2f` | Forward slash |
 | `@` | `$40` | |
 
-## BQL SlotExists — Double Encoding
+## BQL SlotExists: Double Encoding
 
 When using `slotExists()` in a BQL WHERE clause, the `$` in the encoding itself must be re-escaped:
 

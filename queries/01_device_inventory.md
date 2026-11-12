@@ -1,13 +1,13 @@
 # Device Inventory Queries
 
-> **Goal:** Enumerate every device on the station — all protocols, all networks
+> **Goal:** Enumerate every device on the station, all protocols, all networks
 > **Interface:** Workbench `CTRL+L`
 
 ---
 
 ## 1. Universal Device Discovery
 
-### All Devices — Every Protocol
+### All Devices: Every Protocol
 ```
 station:|slot:/Drivers|bql:select * from driver:Device
 ```
@@ -27,7 +27,7 @@ station:|slot:/|bql:select slotPath, displayName, name, status from driver:Devic
 station:|slot:/Drivers|bql:select parent.displayName as 'Network', count(name) as 'Device Count' from driver:Device
 ```
 
-### Total Device Count (Single Cell — for PX Graphics)
+### Total Device Count (Single Cell, for PX Graphics)
 ```
 station:|slot:/Drivers|bql:select count(name) as 'Total Devices' from driver:Device|cell:0,0
 ```
@@ -90,7 +90,7 @@ station:|slot:/Drivers|bql:select parent.displayName as 'Network', name as 'Devi
 
 ## 4. Device Type / Hardware Identification
 
-### All Driver Networks (not devices — the network containers)
+### All Driver Networks (the network containers, not devices)
 ```
 station:|slot:/Drivers|bql:select name, displayName, status from driver:DeviceNetwork
 ```

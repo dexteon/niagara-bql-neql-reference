@@ -5,7 +5,7 @@
 
 ---
 
-## 1. Device Health — All Protocols
+## 1. Device Health: All Protocols
 
 ### All Devices + Live Status
 ```
@@ -76,7 +76,7 @@ station:|slot:/|bql:select slotPath, displayName, status from control:ControlPoi
 station:|slot:/|bql:select slotPath, displayName, status from control:ControlPoint where status.down = true
 ```
 
-### Points — All Status Flags at Once
+### Points: All Status Flags at Once
 ```
 station:|slot:/Drivers|bql:select slotPath, displayName, out, status from control:ControlPoint
 ```

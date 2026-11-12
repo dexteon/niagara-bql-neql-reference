@@ -5,7 +5,7 @@
 
 ---
 
-## 1. All Points — Station Wide
+## 1. All Points: Station Wide
 
 ### Every Control Point
 ```
@@ -138,7 +138,7 @@ station:|slot:|neql:n:point|bql:select displayName, slotPath, ord
 station:|slot:|neql:hs:equip|bql:select displayName, slotPath
 ```
 
-### Points with Specific Tag — Get Tag Value
+### Points with Specific Tag: Get Tag Value
 ```
 station:|slot:/Drivers|bql:select name, vykonPro:Lib.tagValue('n:vendor') as 'Vendor' from baja:Component where vykonPro:Lib.hasTag('n:vendor') = 'true'
 ```

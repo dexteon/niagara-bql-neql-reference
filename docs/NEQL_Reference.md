@@ -1,6 +1,6 @@
-# NEQL — Full Reference
+# NEQL: Full Reference
 
-> Niagara Entity Query Language — tag and relation-based filtering
+> Niagara Entity Query Language, tag and relation-based filtering
 > Requires: Niagara 4.4+, tagDictionary module installed
 
 ---
@@ -31,7 +31,7 @@ station:|slot:/Drivers         ← scope: all drivers subtree
 
 ## Tag Dictionaries
 
-### n: — Niagara Standard Dictionary
+### n: Niagara Standard Dictionary
 
 | Tag | Type | Meaning |
 |-----|------|---------|
@@ -42,7 +42,7 @@ station:|slot:/Drivers         ← scope: all drivers subtree
 | `n:ordInSession` | Ord | ORD within current session |
 | `n:childDevice` | Relation | Child device relation |
 
-### hs: — Project Haystack Dictionary
+### hs: Project Haystack Dictionary
 
 | Tag | Type | Meaning |
 |-----|------|---------|
@@ -64,7 +64,7 @@ station:|slot:/Drivers         ← scope: all drivers subtree
 | `hs:siteRef` | Relation | Links equip/point → site |
 | `hs:equipRef` | Relation | Links point → equipment |
 
-### b: — Custom Baja Tags (User-Defined)
+### b: Custom Baja Tags (User-Defined)
 
 User-defined tags created in TagDictionaryService:
 ```
@@ -117,14 +117,14 @@ station:|slot:/Drivers/BacnetNetwork|bql:select * from baja:Component where vyko
 
 ## Relation Queries
 
-Relations are directional links between entities. They cannot be queried via CTRL+L BQL — they require the Java Entity API.
+Relations are directional links between entities. They cannot be queried via CTRL+L BQL, they require the Java Entity API.
 
 ### Concepts
 - **Outbound** relation: this entity points TO another
 - **Inbound** relation: another entity points TO this one
 - Endpoint is always an ORD to the related entity
 
-### Java API — Add a Relation
+### Java API: Add a Relation
 ```java
 Relation r = entity.relations().add(
     Id.newId("hs:ahuRef"),
@@ -132,7 +132,7 @@ Relation r = entity.relations().add(
 );
 ```
 
-### Java API — Traverse a Relation
+### Java API: Traverse a Relation
 ```java
 // Find the chilled water plant a chiller belongs to
 Id plantRef = Id.newId("hs", "chilledWaterPlantRef");
@@ -142,7 +142,7 @@ chiller.relations().get(plantRef, Relations.OUT).ifPresent(relation -> {
 });
 ```
 
-### Java API — Get All Related Entities
+### Java API: Get All Related Entities
 ```java
 // All child devices of a BACnet network
 bacnetNetwork.relations()
@@ -152,7 +152,7 @@ bacnetNetwork.relations()
     .forEach(entity -> System.out.println(entity.getOrdToEntity()));
 ```
 
-### Java API — Filter by Tag While Traversing
+### Java API: Filter by Tag While Traversing
 ```java
 Id chillerId = Id.newId("hs:chiller");
 bacnetNetwork.relations()
